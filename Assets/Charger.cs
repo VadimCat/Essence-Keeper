@@ -75,4 +75,13 @@ public class Charger : Enemy
     {
         yield return new WaitForSeconds(seconds);
     }
+
+    protected override void GetDamage(int damage)
+    {
+        Health -= damage;
+        if(Health <= 0)
+        {
+            Die();
+        }
+    }
 }
