@@ -9,12 +9,11 @@ public class Obstacle : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+      /*  if (other.gameObject.tag == "Player")
             other.GetComponent<Player>().GetHurt();
         else if (other.gameObject.tag == "Enemy")
             other.GetComponent<Enemy>().EnemyRemove();
         {
-
+        */
         }
-    }
 }
