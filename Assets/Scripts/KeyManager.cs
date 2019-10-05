@@ -17,3 +17,11 @@ public static class Tags
     public static string GAME_CONTROLLER = "GameController";
 
 }
+public static class Prefs
+{
+    public static GameObject SPIKE = Resources.Load("Spike") as GameObject;
+    public static GameObject BONUS_ITEM_BOOTS = Resources.Load("BonusItemBoots") as GameObject;
+    public static GameObject BONUS_ITEM_ARMOR = Resources.Load("BonusItemArmor") as GameObject;
+
+
+}

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class BonusWereable : MonoBehaviour {
 
-    int _level = 1;
-    public int Level
+    protected int _level = 1;
+    public virtual int Level
     {
         get
         {
