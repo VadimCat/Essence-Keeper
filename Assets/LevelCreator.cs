@@ -13,7 +13,7 @@ public struct Assotiation
 [System.Serializable]
 public struct Layer
 {
-    const int TERRAIN_SCALE = 10;
+    const int TERRAIN_SCALE = 2;
     const int SEMANTICS_SCALE = 1;
     public List<Assotiation> Terrain;
     public List<Assotiation> Semantics;
@@ -23,18 +23,18 @@ public struct Layer
     public void GenerateLevel()
     {
         //TERRAIN
-        Vector3 offset = new Vector3(-(float)texture.width / 2, 0, -(float)texture.height / 2);
+        Vector3 offset = new Vector3(-((float)texture.width - 1)* TERRAIN_SCALE / 2, 0, -((float)texture.height - 1) * TERRAIN_SCALE / 2);
         for (int i = 0; i < texture.width; i++)
         {
             for (int j = 0; j < texture.height; j++)
             {
                 Color color = texture.GetPixel(i, j);
                 int index = Terrain.FindIndex((assotiation) => assotiation.color == color);
-                Debug.Log(i + " "+ j);
+                /*Debug.Log(i + " "+ j);
                 Debug.Log(index);
-                Debug.Log((Color32)color);
+                Debug.Log((Color32)color);*/
                 MonoBehaviour.Instantiate(Terrain[index].prefab,
-                    new Vector3(i * TERRAIN_SCALE, 0, j * TERRAIN_SCALE),
+                    new Vector3(i * TERRAIN_SCALE, 0, j * TERRAIN_SCALE) + offset,
                     Quaternion.identity);
             }
         }
