@@ -19,6 +19,7 @@ public class BonusItem : MonoBehaviour {
                 AddBonus<BootsBonusWearable>(pl);
                 break;
             case Bonuses.armor:
+                AddBonus<ArmorBonusWearable>(pl);
 
                 break;
             case Bonuses.fireHelmet:
@@ -47,7 +48,7 @@ public class BonusItem : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == Tags.PLAYER)
         {
             CheckBonus(other.GetComponent<Player>());
             Destroy(gameObject);

@@ -48,6 +48,7 @@ public abstract class Enemy : MonoBehaviour
     protected abstract void Move(Vector3 point);
     protected abstract IEnumerator Attack(GameObject target);
     protected abstract IEnumerator Wait(float seconds);
+    protected abstract void GetDamage(int damage);
     protected void Die()
     {
         EventManager.Instance.OnEnemyDie();
