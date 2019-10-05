@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     void SetEnemies()
     {
         enemiesRemainming = Mathf.CeilToInt(Mathf.Pow(enemyCoeficient, lvl));
-
-        Instantiate(enemiesPrefs[0]);
+        player = Instantiate(playerPref, SpawnPoint, Quaternion.identity).GetComponent<Player>();
+        Instantiate(enemiesPrefs[0], SpawnPoint + Vector3.left * 3 + Vector3.forward * 3, Quaternion.identity);
     }
 
     void SetLevel(int lvl)

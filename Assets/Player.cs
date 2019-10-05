@@ -33,8 +33,6 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         rigidbody.velocity = new Vector3(x, 0, z) * speed * Time.deltaTime;
-        Debug.Log(rigidbody.velocity);
-        //rigidbody.MovePosition(
     }
 
     public void GetHurt()

@@ -10,7 +10,7 @@ public class Charger : Enemy
     Vector3 _movePoint;
     bool _isAttacking = false;
 
-    private void OnEnable()
+    private void Awake()
     {
         _rBody = gameObject.GetComponent<Rigidbody>();
         _target = GameManager.Instance.player.gameObject;
