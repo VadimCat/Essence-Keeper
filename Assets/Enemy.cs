@@ -48,8 +48,8 @@ public abstract class Enemy : MonoBehaviour
     protected abstract void Move(Vector3 point);
     protected abstract IEnumerator Attack(GameObject target);
     protected abstract IEnumerator Wait(float seconds);
-    public abstract void GetDamage(int damage);
-    protected  virtual void Die()
+    public abstract void GetDamage(int damage, DeathType type);
+    protected  virtual void Die(DeathType type)
     {
        //TODO: EventManager.Instance.OnEnemyDie();
         Destroy(gameObject);

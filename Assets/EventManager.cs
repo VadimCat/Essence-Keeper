@@ -15,7 +15,7 @@ public class EventManager : MonoBehaviour {
     public Event OnLevelStart;
 
 
-    public System.Action OnEnemyDie;
+    public System.Action<DeathType> OnEnemyDie;
     
    
 }
