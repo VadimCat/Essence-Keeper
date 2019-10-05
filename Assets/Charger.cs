@@ -40,7 +40,18 @@ public class Charger : Enemy
             }
         }
     }
-
+    protected override void Die(DeathType type)
+    {
+        switch (type)
+        {
+            case DeathType.fallOut:
+                {
+                    //TODO: implement bonus spawn
+                    break;
+                }
+        }
+        Destroy(gameObject);
+    }
 
     public int CharrgerSpeed
     {
@@ -76,7 +87,7 @@ public class Charger : Enemy
         yield return new WaitForSeconds(seconds);
     }
 
-    protected override void GetDamage(int damage)
+    public override void GetDamage(int damage)
     {
         Health -= damage;
         if(Health <= 0)

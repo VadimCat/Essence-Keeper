@@ -43,7 +43,7 @@ public class BonusItem : MonoBehaviour {
         }
         else
         {
-            bonus.Level++;
+            bonus.Level = bonus.Level + 1;
         }
     }
     private void OnTriggerEnter(Collider other)
