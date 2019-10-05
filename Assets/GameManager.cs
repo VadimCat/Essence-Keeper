@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     private void Awake()
-    {
+    {   
         Instance = this;
     }
 
