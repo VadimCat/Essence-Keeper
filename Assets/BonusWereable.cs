@@ -5,18 +5,18 @@ using UnityEngine;
 
 public abstract class BonusWereable : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    internal void Remove()
+    int _level = 1;
+    public int Level
     {
-        
+        get
+        {
+            return _level;
+        }
+        set
+        {
+            _level = value;
+        }
     }
+
+
 }

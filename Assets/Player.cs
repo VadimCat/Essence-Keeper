@@ -10,6 +10,17 @@ public class Player : MonoBehaviour
     int lives;
 
     List<BonusWereable> bonuses = new List<BonusWereable>();
+    public List<BonusWereable> Bonuses
+    {
+        get
+        {
+            return bonuses;
+        }
+        set
+        {
+            bonuses = value;
+        }
+    }
 
     public int Lives
     {
@@ -39,11 +50,17 @@ public class Player : MonoBehaviour
     {
         if (bonuses.Count > 0)
         {
-
+            int bonusToRemoveInd = Random.Range(0, Bonuses.Count);
+            Destroy(Bonuses[bonusToRemoveInd]);
+            Bonuses.RemoveAt(bonusToRemoveInd);
         }
         else
         {
-            bonuses[Random.Range(0, bonuses.Count)].Remove();
+            Die();
         }
+    }
+    private void Die()
+    {
+       // GameManager.gameover;
     }
 }
