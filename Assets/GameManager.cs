@@ -8,11 +8,14 @@ public enum DeathType
     fallOut,// сапог
     spike,//   Ловушка
     fire,//    броня огня, 
-    poison,//  плащ смэрти
     kill,//    Меч
     crush//    Щит
 }
-
+[System.Serializable]
+public enum Bonuses
+{
+    boot, armor, fireHelmet, sword, shield
+}
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
