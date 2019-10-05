@@ -42,14 +42,7 @@ public class Charger : Enemy
     }
     protected override void Die(DeathType type)
     {
-        switch (type)
-        {
-            case DeathType.fallOut:
-                {
-                    //TODO: implement bonus spawn
-                    break;
-                }
-        }
+        EventManager.Instance.OnEnemyDie(type);
         Destroy(gameObject);
     }
 
@@ -87,12 +80,12 @@ public class Charger : Enemy
         yield return new WaitForSeconds(seconds);
     }
 
-    public override void GetDamage(int damage)
+    public override void GetDamage(int damage, DeathType type)
     {
         Health -= damage;
         if(Health <= 0)
         {
-            Die();
+            Die(type);
         }
     }
 }

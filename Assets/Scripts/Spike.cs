@@ -20,6 +20,7 @@ public class Spike : MonoBehaviour {
     [SerializeField]
     float angularVelocity;
     Transform _parent;
+    DeathType _deathType = DeathType.spike;
     private void Awake()
     {
         _parent = gameObject.transform.parent;
@@ -34,7 +35,7 @@ public class Spike : MonoBehaviour {
     {
         if (other.gameObject.tag == Tags.ENEMY)
         {
-            other.gameObject.GetComponent<Enemy>().GetDamage(Level * _multiplier);
+            other.gameObject.GetComponent<Enemy>().GetDamage(Level * _multiplier, _deathType);
         }
     }
 
