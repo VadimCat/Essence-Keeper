@@ -23,15 +23,16 @@ public class ShieldBonusWearable : BonusWereable {
     {
        Shield = Prefs.BONUS_SHIELD.transform;
        Shield = Instantiate(Shield, transform.position, Quaternion.identity, transform) as Transform;
+        Shield.gameObject.GetComponent<CapsuleCollider>().isTrigger = true;
     }
     private void Update()
     {
 
         Shield.transform.Rotate(Vector3.up, 1f);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == Tags.ENEMY)
+        if (other.gameObject.tag == Tags.ENEMY)
         {
             if (Level > 1)
             {
@@ -43,4 +44,5 @@ public class ShieldBonusWearable : BonusWereable {
             }
         }
     }
+    
 }
