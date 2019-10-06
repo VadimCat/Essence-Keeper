@@ -23,6 +23,7 @@ public static class Prefs
     public static GameObject BONUS_ITEM_BOOTS = Resources.Load("BonusItemBoots") as GameObject;
     public static GameObject BONUS_ITEM_ARMOR = Resources.Load("BonusItemArmor") as GameObject;
     public static GameObject BONUS_SHIELD = Resources.Load("BonusShield") as GameObject;
+    public static GameObject BONUS_SWORD = Resources.Load("BonusSword") as GameObject;
 
 
 }
