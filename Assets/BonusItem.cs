@@ -20,16 +20,15 @@ public class BonusItem : MonoBehaviour {
                 break;
             case Bonuses.armor:
                 AddBonus<ArmorBonusWearable>(pl);
-
                 break;
             case Bonuses.fireHelmet:
-
+                AddBonus<FireHelmetBonusWearable>(pl);
                 break;
             case Bonuses.sword:
 
                 break;
             case Bonuses.shield:
-
+                AddBonus<ShieldBonusWearable>(pl);
                 break;
         }
     }

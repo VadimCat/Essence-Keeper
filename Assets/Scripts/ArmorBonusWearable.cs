@@ -10,7 +10,6 @@ public class ArmorBonusWearable : BonusWereable
         GameObject spike = Prefs.SPIKE;
         for(int i = 0; i < 4; i++)
         {
-
             _spikes[i] = Instantiate(spike, transform.position + Vector3.forward , Quaternion.Euler(90,0,0), transform).
                                     GetComponent<Spike>();
             _spikes[i].gameObject.transform.RotateAround(transform.position, Vector3.up, 90 * i);
