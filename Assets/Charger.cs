@@ -42,7 +42,7 @@ public class Charger : Enemy
     }
     protected override void Die(DeathType type)
     {
-        EventManager.Instance.OnEnemyDie(type);
+       //TODO: EventManager.Instance.OnEnemyDie(type);
         Destroy(gameObject);
     }
 
